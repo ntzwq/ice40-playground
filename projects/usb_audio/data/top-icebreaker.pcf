@@ -6,9 +6,25 @@ set_io -nowarn spi_flash_cs_n 16
 set_io -nowarn spi_ram_cs_n 37
 
 # USB
-set_io -nowarn usb_dp 31
-set_io -nowarn usb_dn 34
-set_io -nowarn usb_pu 38
+ # PMOD 1A
+#set_io -nowarn usb_dp 47
+#set_io -nowarn usb_dn 45
+#set_io -nowarn usb_pu  4
+
+ # PMOD 1B
+set_io -nowarn usb_dp 34
+set_io -nowarn usb_dn 31
+set_io -nowarn usb_pu 43
+
+ # PMOD 2
+#set_io -nowarn usb_dp 21
+#set_io -nowarn usb_dn 19
+#set_io -nowarn usb_pu 27
+
+ # tnt's cable
+#set_io -nowarn usb_dp 31
+#set_io -nowarn usb_dn 34
+#set_io -nowarn usb_pu 38
 
 # UART
 set_io -nowarn uart_rx 6
@@ -26,5 +42,14 @@ set_io -nowarn rgb[1] 40
 set_io -nowarn rgb[2] 41
 
 # Audio
+ # PMOD 1A
 set_io -nowarn audio[0] 45
 set_io -nowarn audio[1] 44
+
+ # PMOD 1B
+#set_io -nowarn audio[0] 31
+#set_io -nowarn audio[1] 28
+
+ # PMOD 2
+#set_io -nowarn audio[0] 19
+#set_io -nowarn audio[1] 18

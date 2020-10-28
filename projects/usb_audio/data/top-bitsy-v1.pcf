@@ -26,5 +26,18 @@ set_io -nowarn rgb[1] 40
 set_io -nowarn rgb[2] 41
 
 # Audio
-set_io -nowarn audio[0] 36
-set_io -nowarn audio[1] 43
+  # PMOD 1
+#set_io -nowarn audio[0]  9
+#set_io -nowarn audio[1] 10
+
+  # PMOD 2
+#set_io -nowarn audio[0] 28
+#set_io -nowarn audio[1] 34
+
+  # PMOD 3
+#set_io -nowarn audio[0] 11
+#set_io -nowarn audio[1] 46
+
+  # tnt's prototype
+set_io -nowarn audio[0] 43
+set_io -nowarn audio[1] 36

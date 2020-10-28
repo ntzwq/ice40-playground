@@ -26,5 +26,6 @@ set_io -nowarn rgb[1] 40
 set_io -nowarn rgb[2] 41
 
 # Audio
+  # Random pick, assign as needed
 set_io -nowarn audio[0] 20
 set_io -nowarn audio[1] 21
