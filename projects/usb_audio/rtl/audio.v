@@ -231,7 +231,7 @@ module audio (
 		for (i=0; i<2; i=i+1)
 		begin
 			av_volume[i] <= volume[i];
-			av_sample[i] <= fr_data[16*i+:16];
+			av_sample[i] <= fr_empty ? 0 : fr_data[16*i+:16];
 			av_scaled[i] <= $signed(av_volume[i]) * $signed(av_sample[i]);
 		end
 	end
@@ -240,13 +240,13 @@ module audio (
 	// PDM output
 	// ----------
 
-	assign av_out[0] = av_scaled[0][29:14] ^ 16'h8000;
-	assign av_out[1] = av_scaled[1][29:14] ^ 16'h8000;
+	assign av_out[0] = av_scaled[0][30:15] ^ 16'h8000;
+	assign av_out[1] = av_scaled[1][30:15] ^ 16'h8000;
 
 	pdm #(
-    	.WIDTH(16),
-    	.DITHER("YES"),
-    	.PHY("ICE40")
+		.WIDTH(16),
+		.DITHER("NO"),
+		.PHY("ICE40")
 	) pdm_I[1:0] (
 		.pdm     (audio),
 		.cfg_val ({av_out[1], av_out[0]}),
